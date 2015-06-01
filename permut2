@@ -1,0 +1,23 @@
+def find_ambiguity(permutation):
+    t = len(permutation)
+    count=1
+    ambiguous=1
+    for i in permutation:
+        if count  != permutation[i-1]:
+            ambiguous=0
+        count=count+1
+    if ambiguous:
+        return "ambiguous"
+    else:
+        return "not ambiguous"
+ 
+output=[]
+while True:
+    temp_no = int(raw_input())	
+    if temp_no == 0:
+        break
+    list_characters = map(int,raw_input().split())
+    output.append(find_ambiguity(list_characters))
+for j in output:
+    print j
+ 
